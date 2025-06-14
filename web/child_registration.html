@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ORPHANAGE MANAGEMENT SYSTEM</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  background-color: #4692A1;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+article {
+  float: right;
+  padding-top: 50px;
+  padding-left: 200px;
+  width: 100%;
+  background-color:#C0C5C6;
+  height: 500px; /* only for demonstration, should be removed */
+}
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+<script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("cpassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password do not match.");
+                return false;
+            }
+
+            return true;
+        }
+</script>
+
+</head>
+<body>
+    
+    <header>
+   <div style="display: flex; align-items: center; justify-content: center;">
+      <div style="position: absolute; left: 0;">
+         <a href="index.html"><img src="logo.jpg"></a>
+      </div>
+      <div>
+         <h2 style="text-align: center; margin: 0;">Orphanage Management System</h2>
+      </div>
+   </div>
+   <div style="text-align: center;">
+      <h3>Child Sign Up</h3>
+   </div>
+    </header>
+    
+    <section>
+ 
+    <article>
+    <h3>Register Here</h3>
+    <table>
+
+
+    <form action="ChildRegistrationController" method="POST" onsubmit="return validateForm()">
+        
+        <tr>
+        <td><p style="color:black; " ><label for="name">Name:</label></p></td>
+        <th><input type="text" id="name" name="name" required><br><br></th>
+        </tr>
+        
+        <tr>
+        <td><p style="color:black; " ><label for="age">Age:</label></p></td>
+        <th><input type="number" id="age" name="age" required><br><br></th>
+        </tr>
+        
+        <tr>
+        <td><p style="color:black; " ><label for="gender">Gender:</label></p></td>
+        <td><select id="gender" name="gender" required>
+            <option value="choose">Choose</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br></td>
+        </tr>
+        
+        <tr>
+        <td><p style="color:black; " ><label for="name">Username:</label></p></td>
+        <th><input type="text" id="username" name="username" required><br><br></th>
+        </tr>
+        
+        <tr>
+        <td><p style="color:black; " ><label for="name">Password:</label></p></td>
+        <th><input type="password" id="password" name="password" required><br><br></th>
+        </tr>
+        
+        <tr>
+        <td><p style="color:black; " ><label for="name">Confirm Password:</label></p></td>
+        <th><input type="password" id="cpassword" name="cpassword" required><br><br></th>
+        </tr>
+        
+        <tr>
+        <th colspan="2"><br><input type="submit" value="Register"></th>
+        </tr>
+        
+    </form>
+    </table>
+  </article>
+</section>
+
+</body>
+</html>
